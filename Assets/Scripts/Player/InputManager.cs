@@ -13,18 +13,17 @@ public class InputManager : MonoBehaviour
     {
         playerInput = new InputSystem_Actions();
         groundInput = playerInput.Ground;
+
         pMovement = GetComponent<PlayerMovement>();
         pLook = GetComponent<PlayerLook>();
-        groundInput.Jump.performed += ctx => pMovement.InputJump();
-    }
 
-	void FixedUpdate()
-	{
-        pMovement.InputMove(groundInput.Move.ReadValue<Vector2>());
-	}
+        groundInput.Jump.performed += ctx => pMovement.InputJump();
+        groundInput.Sprint.performed += ctx => pMovement.InputSprint();
+    }
 	private void LateUpdate()
 	{
         pLook.InputLook(groundInput.Look.ReadValue<Vector2>());
+        pMovement.InputMove(groundInput.Move.ReadValue<Vector2>());
     }
 	private void OnEnable()
 	{

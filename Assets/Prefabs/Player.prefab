@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 7679745500221727228}
   - component: {fileID: 5647936146802569208}
   - component: {fileID: 937934711325507926}
+  - component: {fileID: 493341772020367720}
   - component: {fileID: 1590999761467658337}
   m_Layer: 0
   m_Name: Player
@@ -143,7 +144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  gravity: -9.8
+  gravity: -30
   jumpHeight: 1.5
 --- !u!114 &5647936146802569208
 MonoBehaviour:
@@ -176,6 +177,25 @@ MonoBehaviour:
   mask:
     serializedVersion: 2
     m_Bits: 64
+--- !u!114 &493341772020367720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2477832906846772537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07dd1ccc7100a4242ab6c5bff27c9572, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  healthChipSpeed: 2
+  frontHealthBar: {fileID: 0}
+  chipHealthBar: {fileID: 0}
+  damageOverlay: {fileID: 0}
+  effectDuration: 1
+  effectFadeSpeed: 1.5
 --- !u!114 &1590999761467658337
 MonoBehaviour:
   m_ObjectHideFlags: 0

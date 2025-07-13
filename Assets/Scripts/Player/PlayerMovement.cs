@@ -5,9 +5,11 @@ public class PlayerMovement : MonoBehaviour
     private CharacterController pController;
     private Vector3 playerVelocity;
     private bool isGrounded;
+    private bool isSprinting = false;
     public float speed = 5f;
     public float gravity = -9.8f;
     public float jumpHeight = 3f;
+
     void Start()
     {
         pController = GetComponent<CharacterController>();
@@ -35,5 +37,14 @@ public class PlayerMovement : MonoBehaviour
 		{
             playerVelocity.y = Mathf.Sqrt(jumpHeight * -3f * gravity);
 		}
+	}
+    public void InputSprint()
+	{
+        isSprinting = !isSprinting;
+
+        if (isSprinting)
+            speed = 8f;
+        else
+            speed = 5f;
 	}
 }
